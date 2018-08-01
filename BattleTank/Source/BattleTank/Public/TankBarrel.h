@@ -9,17 +9,18 @@
 /**
  * 
  */
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), hidecategories = (""))
+UCLASS(meta=(BlueprintSpawnableComponent), hidecategories = (""))
 class BATTLETANK_API UTankBarrel : public UStaticMeshComponent
 {
 	GENERATED_BODY()
 
 public:
-	void Elevate(float DegreesPerSecond);
+	// -1 is max downward speed, +1 is max up movement
+	void Elevate(float RelativeSpeed);
 
 private:
 	UPROPERTY(EditAnywhere, Category = Setup )
-	float MaxDegreePerSecond = 20; // Sensible default
+	float MaxDegreePerSecond = 20; 
 
 	UPROPERTY(EditAnywhere, Category = Setup )
 	float MinElevationPerSecond = 0; // Minimum barrel elevation
