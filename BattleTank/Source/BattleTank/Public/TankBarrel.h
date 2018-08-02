@@ -20,12 +20,12 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, Category = Setup )
-	float MaxDegreePerSecond = 20; 
+	float MaxDegreePerSecond = 5; 
 
 	UPROPERTY(EditAnywhere, Category = Setup )
-	float MinElevationPerSecond = 0; // Minimum barrel elevation
+	float MinElevationDegree= 0; // Minimum barrel elevation
 
 	UPROPERTY(EditAnywhere, Category = Setup )
-	float MaxElevationPerSecond = 40; // Maximum barrel elevation
+	float MaxElevationDegree = 40; // Maximum barrel elevation
 	
 };
