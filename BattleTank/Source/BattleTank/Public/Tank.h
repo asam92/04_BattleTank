@@ -26,7 +26,6 @@ protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
 public:	
-
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
@@ -40,5 +39,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurretReference(UTankTurret* TurretToSet);
-	
+
+	UFUNCTION(BlueprintCallable)
+	void Fire();
 };
