@@ -25,7 +25,6 @@ private:
 	// Local barrel referencef for spawning projectile
 	UTankBarrel* Barrel = nullptr;
 
-	float ReloadTimeInSeconds = 3;
 	double LastFireTime = 0;
 
 protected:
@@ -40,17 +39,22 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
-	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 4000; 
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurretReference(UTankTurret* TurretToSet);
 
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float LaunchSpeed = 4000; 
+
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+	float ReloadTimeInSeconds = 3;
+
 	UFUNCTION(BlueprintCallable)
 	void Fire();
 
-	UPROPERTY(EditAnywhere, Category = Setup)
-	TSubclassOf<AProjectile> ProjectileBlueprint;
+	
 
 
 };
