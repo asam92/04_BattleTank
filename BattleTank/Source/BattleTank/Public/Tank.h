@@ -25,6 +25,9 @@ private:
 	// Local barrel referencef for spawning projectile
 	UTankBarrel* Barrel = nullptr;
 
+	float ReloadTimeInSeconds = 3;
+	double LastFireTime = 0;
+
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
