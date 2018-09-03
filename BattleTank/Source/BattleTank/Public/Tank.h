@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Asam.
 
 #pragma once
 
@@ -17,16 +17,12 @@ class BATTLETANK_API ATank : public APawn
 {
 	GENERATED_BODY()
 
-private:
-	// Sets default values for this pawn's properties
-	ATank();
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+public:	
 
-	// Local barrel referencef for spawning projectile
-	UTankBarrel* Barrel = nullptr;
+	void AimAt(FVector HitLocation);
 
-	double LastFireTime = 0;
+	UFUNCTION(BlueprintCallable)
+	void Fire();
 
 protected:
 	UPROPERTY(BlueprintReadOnly)
@@ -34,21 +30,13 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 	UTankMovementComponent* TankMovementComponent = nullptr;
-
-public:	
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-	void AimAt(FVector HitLocation);
 	
-	UFUNCTION(BlueprintCallable, Category = "Setup")
-	void SetBarrelReference(UTankBarrel* BarrelToSet);
-
+private:
+	// Sets default values for this pawn's properties
+	ATank();
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
-
-	UFUNCTION(BlueprintCallable, Category = "Setup")
-	void SetTurretReference(UTankTurret* TurretToSet);
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000; 
@@ -56,10 +44,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3;
 
-	UFUNCTION(BlueprintCallable)
-	void Fire();
+	// Local barrel reference for spawning projectile
+	UTankBarrel* Barrel = nullptr; //TODO remove
 
-	
-
+	double LastFireTime = 0;
 
 };
