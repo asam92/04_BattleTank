@@ -1,11 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Asam.
 
 #include "Tank.h"
-#include "BattleTank.h"
 #include "Projectile.h"
 #include "TankBarrel.h"
 #include "TankAimingComponent.h"
-#include "TankMovementComponent.h"
 
 // Sets default values
 ATank::ATank()
