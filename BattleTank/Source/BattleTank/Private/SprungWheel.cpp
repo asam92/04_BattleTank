@@ -26,8 +26,8 @@ void ASprungWheel::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	if ( GetAttachParentActor()) {UE_LOG(LogTemp,Warning, TEXT("Ada")) }
-	else {UE_LOG(LogTemp,Warning, TEXT("Hilang"))}
+	if ( GetAttachParentActor()) {UE_LOG(LogTemp,Warning, TEXT("Ada :%s"), *GetAttachParentActor()->GetName()) }
+	
 }
 
 // Called every frame
