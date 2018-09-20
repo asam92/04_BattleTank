@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "AIController.h"
+#include "TankAimingComponent.h"
+#include "Tank.h"
 #include "TankAIController.generated.h"
 
 UCLASS()

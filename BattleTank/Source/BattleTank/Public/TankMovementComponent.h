@@ -3,6 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/NavMovementComponent.h"
+#include "TankTrack.h"
 #include "TankMovementComponent.generated.h"
 
 class UTankTrack;

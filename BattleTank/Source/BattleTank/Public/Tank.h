@@ -5,7 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/Actor.h"
+#include "Projectile.h"
+#include "TankBarrel.h"
 #include "Tank.generated.h"
+
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTankDelegate);
 
